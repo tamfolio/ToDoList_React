@@ -10,6 +10,7 @@ function App() {
     event.preventDefault();
     console.log('i am working')
     setTodos([...todos, input])
+    setInput('');
   }
   return (
     <div className="App">
