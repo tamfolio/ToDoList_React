@@ -7,6 +7,7 @@ function App() {
   console.log(input)
 
   const addTodo = (event) => {
+    event.preventDefault();
     console.log('i am working')
     setTodos([...todos, input])
   }
