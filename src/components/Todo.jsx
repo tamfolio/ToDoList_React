@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText';
 import db from '../firebase'
 import Button from '@mui/material/Button';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-
+import Modal from '@mui/material/Modal';
 
 function Todo(props) {
   const[open,setOpen] = useState(false)
@@ -24,6 +24,7 @@ function Todo(props) {
     >
       <div>
         <h1>Open</h1>
+        <button onClick={e => setOpen(false)}></button>
       </div>
     </Modal>
     <List className='todo_list' >
