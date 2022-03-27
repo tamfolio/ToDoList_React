@@ -3,6 +3,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 // import './Todo.style.css'
+import Button from '@mui/material/Button';
 
 
 function Todo({todo}) {
@@ -11,6 +12,7 @@ function Todo({todo}) {
        <ListItem>
            <ListItemText primary={todo} secondary='Dummy Lorem'/>
        </ListItem>
+       <Button>DELETE ME</Button>
     </List>
   )
 }
