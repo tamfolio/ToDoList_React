@@ -37,7 +37,7 @@ function Todo(props) {
       <div>
         <h1>I am a modal</h1>
          <input placeholder={props.todo.todo} value={input} onChange={event => setInput(event.target.value)}/>
-        <Button onClick={e => setOpen(false)}>Update Todo</Button>
+        <Button onClick={updateTodo}>Update Todo</Button>
       </div>
     </Modal>
     <List className='todo_list' >
