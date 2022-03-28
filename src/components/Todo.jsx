@@ -8,12 +8,24 @@ import Button from '@mui/material/Button';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import Modal from '@mui/material/Modal';
 
+
+
 function Todo(props) {
   const[open,setOpen] = useState(false)
+  const[input, setInput] = useState('')
 
   const handleOpen = () => {
     setOpen(true);
   };
+
+  const updateTodo = () => {
+    db.collection('todos').doc(props.todo.id).set({
+      todo: input
+    }, {merge: true})
+    setOpen(false)
+  }
+
+
 
   
   return (
@@ -23,8 +35,9 @@ function Todo(props) {
       onClose={e => setOpen(false)}
     >
       <div>
-        <h1>Open</h1>
-        <button onClick={e => setOpen(false)}></button>
+        <h1>I am a modal</h1>
+         <input placeholder={props.todo.todo} value={input} onChange={event => setInput(event.target.value)}/>
+        <Button onClick={e => setOpen(false)}>Update Todo</Button>
       </div>
     </Modal>
     <List className='todo_list' >
